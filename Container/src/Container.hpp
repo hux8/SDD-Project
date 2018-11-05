@@ -72,6 +72,21 @@ template <class T> class Container {
          */        
         void clear() {this->_data.clear();}
 
+        /**
+         * Updates an item.
+         *
+         * @param oldItem: The original item 
+         * @param newItem: The updated item
+         * @effects: newItem replaces oldItem in the container
+         * @returns: TRUE if updated, FALSE if oldITEM D.N.E.
+         */
+        bool update(const T& oldItem, const T& newItem) {
+            auto itr = _data.find(oldItem);
+            if (itr == _data.end()) {return false;}
+            *itr = newItem;
+            return true;
+        }
+
     private:
         std::set<T> _data;
 };
