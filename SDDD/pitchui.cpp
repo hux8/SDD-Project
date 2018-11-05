@@ -7,7 +7,6 @@ PitchUI::PitchUI(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->description->setReadOnly(true);
-    ui->comment->setReadOnly(true);
 }
 
 PitchUI::~PitchUI()
@@ -18,13 +17,23 @@ PitchUI::~PitchUI()
 void PitchUI::setAccess(bool b)
 {
     ui->bdelete->setVisible(b);
-    ui->bmodifyComment->setVisible(b);
     ui->bmodifyDescription->setVisible(b);
+}
+
+void PitchUI::setUp(int i, int date, QString t, QString d)
+{
+    id=i;
+    ui->description->setText(d);
+    ui->title->setText(t);
+    setWindowTitle(t);
+    QString da=QString::number(date);
+    ui->date->setText(da.left(4)+"/"+da.mid(4,2)+"/"+da.right(2));
 }
 
 void PitchUI::toConfirm()
 {
     ConfirmDialog* c=new ConfirmDialog();
+    connect(c,SIGNAL(confirmed()),this,SLOT(toDelete()));
     c->show();
 }
 
@@ -39,19 +48,13 @@ void PitchUI::modifyDescription()
     {
         ui->description->setReadOnly(true);
         ui->bmodifyDescription->setText("Modify");
+        emit modify(id, 0,ui->description->toPlainText());
     }
 }
 
-void PitchUI::modifyComment()
+void PitchUI::toDelete()
 {
-    if(ui->comment->isReadOnly())
-    {
-        ui->comment->setReadOnly(false);
-        ui->bmodifyComment->setText("Confirm");
-    }
-    else
-    {
-        ui->comment->setReadOnly(true);
-        ui->bmodifyComment->setText("Modify");
-    }
+    emit deletePitch(id);
+    close();
 }
+

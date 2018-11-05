@@ -3,12 +3,13 @@
 
 #include <QMainWindow>
 #include <QListWidget>
-#include "searchresult.h"
 #include "pitchui.h"
 #include "projectui.h"
 #include "changecode.h"
 #include "addpitch.h"
 #include "addproject.h"
+#include "pitch.h"
+#include "project.h"
 
 namespace Ui {
 class HomePage;
@@ -22,15 +23,35 @@ public:
     explicit HomePage(QWidget *parent = 0);
     ~HomePage();
     void setInstructor(bool i);
-    void initialise(QListWidget* w, QList<QString> p);
+    void displayPitches(QList<Pitch> p);
+    void displayProjects(QList<Project> pr);
+
+protected:
+        void closeEvent(QCloseEvent *event);
+
+signals:
+    void isClosed();
 
 
 public slots:
     void search();
+
     void openPitch();
     void openProject();
+
     void createPitch();
     void createProject();
+
+    void modifyPitch(int id, int item, QString s);
+    void modifyProject(int id, int item, QString s);
+
+    void newPitch(int date, QString t, QString d);
+    void newProject(int date, QString t, QString d, QString con, QString u, QString com, QString f);
+
+    void deletePitch(int index);
+    void deleteProject(int index);
+
+    void display();
 
 
 private:
@@ -39,8 +60,12 @@ private:
     bool instructor;
     void setAccess();
 
-    QList<QString> pitches;
-    QList<QString> projects;
+    QList<Pitch> pitches;
+    QList<Project> projects;
+
+    QList<Pitch> pitchesCur;
+    QList<Project> projectsCur;
+
 };
 
 #endif // HOMEPAGE_H

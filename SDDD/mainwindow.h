@@ -21,10 +21,13 @@ public slots:
     void verify();
     void enterMain();
     void setInstructor();
+    void quit();
 
 private:
     Ui::MainWindow *ui;
     bool isInstructor;
+
+    Verification* v;
 };
 
 #endif // MAINWINDOW_H

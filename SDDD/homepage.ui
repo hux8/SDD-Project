@@ -86,6 +86,30 @@
      </widget>
     </item>
     <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="lsearch">
+        <property name="text">
+         <string>search results for: </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bcancelSearch">
+        <property name="maximumSize">
+         <size>
+          <width>130</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>cancel search</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -153,7 +177,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="baddPitch">
           <property name="text">
            <string>Add Pitch</string>
           </property>
@@ -224,7 +248,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="QPushButton" name="baddProject">
           <property name="text">
            <string>Add Project</string>
           </property>
@@ -288,7 +312,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_4</sender>
+   <sender>baddPitch</sender>
    <signal>clicked()</signal>
    <receiver>HomePage</receiver>
    <slot>createPitch()</slot>
@@ -304,7 +328,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_5</sender>
+   <sender>baddProject</sender>
    <signal>clicked()</signal>
    <receiver>HomePage</receiver>
    <slot>createProject()</slot>
@@ -319,6 +343,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>bcancelSearch</sender>
+   <signal>clicked()</signal>
+   <receiver>HomePage</receiver>
+   <slot>display()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>312</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>search()</slot>
@@ -326,5 +366,6 @@
   <slot>openProject()</slot>
   <slot>createPitch()</slot>
   <slot>createProject()</slot>
+  <slot>display()</slot>
  </slots>
 </ui>

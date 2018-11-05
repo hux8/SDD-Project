@@ -15,6 +15,9 @@ public:
     explicit AddPitch(QWidget *parent = 0);
     ~AddPitch();
 
+signals:
+    void newPitch(int date, QString t, QString d);
+
 public slots:
     void createPitch();
 

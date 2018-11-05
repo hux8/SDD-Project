@@ -29,7 +29,7 @@
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="date">
        <property name="font">
         <font>
          <pointsize>22</pointsize>
@@ -39,72 +39,6 @@
         <string>date</string>
        </property>
       </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Contact Info:   </string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTextEdit" name="contact">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bmodifyContact">
-         <property name="text">
-          <string>Modify</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_5">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Link to project:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTextEdit" name="url">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bmodifyUrl">
-         <property name="text">
-          <string>Modify</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </item>
     </layout>
    </item>
@@ -142,7 +76,7 @@ p, li { white-space: pre-wrap; }
      </item>
     </layout>
    </item>
-   <item alignment="Qt::AlignBottom">
+   <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>Features:</string>
@@ -152,7 +86,15 @@ p, li { white-space: pre-wrap; }
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QTextEdit" name="features"/>
+      <widget class="QTextEdit" name="features">
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="bmodifyFeatures">
@@ -163,8 +105,74 @@ p, li { white-space: pre-wrap; }
      </item>
     </layout>
    </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="lcontact">
+         <property name="text">
+          <string>Contact Info:   </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="contact">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bmodifyContact">
+         <property name="text">
+          <string>Modify</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="lurl">
+         <property name="text">
+          <string>Link to project:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="url">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bmodifyUrl">
+         <property name="text">
+          <string>Modify</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
    <item alignment="Qt::AlignBottom">
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="lcomment">
      <property name="text">
       <string>Instructor Comment:</string>
      </property>
@@ -207,7 +215,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>376</x>
-     <y>100</y>
+     <y>344</y>
     </hint>
     <hint type="destinationlabel">
      <x>421</x>
@@ -223,7 +231,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>376</x>
-     <y>160</y>
+     <y>404</y>
     </hint>
     <hint type="destinationlabel">
      <x>335</x>
@@ -239,7 +247,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>388</x>
-     <y>256</y>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
      <x>427</x>
@@ -255,7 +263,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>363</x>
-     <y>369</y>
+     <y>263</y>
     </hint>
     <hint type="destinationlabel">
      <x>416</x>

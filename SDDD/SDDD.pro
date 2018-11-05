@@ -28,31 +28,32 @@ SOURCES += \
         mainwindow.cpp \
     verification.cpp \
     homepage.cpp \
-    searchresult.cpp \
     pitchui.cpp \
     projectui.cpp \
     confirmdialog.cpp \
     changecode.cpp \
+    project.cpp \
     addpitch.cpp \
-    addproject.cpp
+    addproject.cpp \
+    pitch.cpp
 
 HEADERS += \
         mainwindow.h \
     verification.h \
     homepage.h \
-    searchresult.h \
     pitchui.h \
     projectui.h \
     confirmdialog.h \
     changecode.h \
     addpitch.h \
+    pitch.h \
+    project.h \
     addproject.h
 
 FORMS += \
         mainwindow.ui \
     verification.ui \
     homepage.ui \
-    searchresult.ui \
     pitchui.ui \
     projectui.ui \
     confirmdialog.ui \

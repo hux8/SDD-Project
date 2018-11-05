@@ -14,7 +14,7 @@ class Verification : public QDialog
 signals:
     void isChecked();
     void asStudent();
-
+    void isClosed();
 public:
     explicit Verification(QWidget *parent = 0);
     ~Verification();
@@ -23,6 +23,7 @@ public:
 public slots:
     void checkCode();
     void showMain();
+
 
 
 private:

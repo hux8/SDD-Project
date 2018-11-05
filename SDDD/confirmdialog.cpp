@@ -16,5 +16,6 @@ ConfirmDialog::~ConfirmDialog()
 void ConfirmDialog::confirm()
 {
     emit confirmed();
+    close();
 }
 

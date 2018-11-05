@@ -6,14 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>357</height>
+    <width>321</width>
+    <height>306</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Add New Pitch</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="error">
+     <property name="text">
+      <string>ERROR: Please fill all fields !!!</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
@@ -24,33 +31,40 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="title"/>
      </item>
     </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="dabel">
        <property name="text">
         <string>Date (yyyy/mm/dd): </string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="date"/>
      </item>
     </layout>
    </item>
+   <item alignment="Qt::AlignTop">
+    <widget class="QLabel" name="errord">
+     <property name="text">
+      <string>ERROR: date format incorrect !!!</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Description:</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item alignment="Qt::AlignTop">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Description:</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QTextEdit" name="description">
        <property name="enabled">
@@ -65,24 +79,6 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item alignment="Qt::AlignTop">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Comment:   </string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTextBrowser" name="comment">
-       <property name="autoFillBackground">
-        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -117,12 +113,12 @@ p, li { white-space: pre-wrap; }
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>84</x>
-     <y>335</y>
+     <x>96</x>
+     <y>282</y>
     </hint>
     <hint type="destinationlabel">
      <x>15</x>
-     <y>356</y>
+     <y>293</y>
     </hint>
    </hints>
   </connection>
@@ -133,12 +129,12 @@ p, li { white-space: pre-wrap; }
    <slot>createPitch()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>301</x>
-     <y>329</y>
+     <x>308</x>
+     <y>282</y>
     </hint>
     <hint type="destinationlabel">
-     <x>346</x>
-     <y>356</y>
+     <x>320</x>
+     <y>293</y>
     </hint>
    </hints>
   </connection>

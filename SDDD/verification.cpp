@@ -8,7 +8,7 @@ Verification::Verification(QWidget *parent) :
     checked=false;
     ui->setupUi(this);
     ui->lerror->setVisible(false);
-    code="instructor";
+    code="ins";
 }
 
 Verification::~Verification()
