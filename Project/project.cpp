@@ -1,6 +1,8 @@
 #include <string>
 #include <list>
 #include <iostream>
+#include <ctype.h>
+#include <algorithm> 
 #include <vector>
 #include "project.h"
 
@@ -86,4 +88,43 @@ void Project::modifyContactInfo(std::string newContactInfo)
 void Project::modifyComment(std::string newComment)
 {
     comment = newComment;
+}
+
+bool Project::whetherInTitle(std::string sName)
+{
+    std::string temp = title;
+    std::transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+    std::transform(sName.begin(), sName.end(), sName.begin(), ::tolower);
+    if (temp.find(sName) != std::string::npos)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Project::whetherInDescription(std::string sName)
+{
+    std::string temp = description;
+    std::transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+    std::transform(sName.begin(), sName.end(), sName.begin(), ::tolower);
+    if (temp.find(sName) != std::string::npos)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Project::whetherInFeatures(std::string sName)
+{
+    for (unsigned int i = 0; i < features.size(); i++)
+    {
+        std::string temp = features[i];
+        std::transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+        std::transform(sName.begin(), sName.end(), sName.begin(), ::tolower);
+        if (temp.find(sName) != std::string::npos)
+        {
+            return true;
+        }
+    }
+    return false;
 }
