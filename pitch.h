@@ -19,6 +19,16 @@ class Pitch {
         void Pitch::modify_title (const std::string & title_) { title = title_; };
         void Pitch::modify_content (const std::string & content_); { content = content_; }
 
+        /**
+         * Defines the "<" operator for this class
+         * 
+         * @param p1, p2: Pitches being compared
+         * @returns: TRUE if p1.date < p2.date, FALSE otherwise
+         */
+        bool operator<(const Pitch& p1, const Pitch& p2) {
+            return p1.get_date() < p2.get_date();
+        }
+
     private:
         int date;
         std::string titile;
