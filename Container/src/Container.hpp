@@ -62,7 +62,7 @@ template <class T> class Container {
          * 
          * @returns: this->_data.size()
          */        
-        int size() {return this->_data.size();}
+        const int size() const {return this->_data.size();}
 
         /**
          * Clears the container
