@@ -18,6 +18,10 @@ public:
     void modifyContactInfo(std::string newContactInfo);
     void modifyComment(std::string newComment);
     void modifyFeatures(std::vector<std::string> newFeatures);
+    
+    bool whetherInTitle(std::string sName);
+    bool whetherInDescription(std::string sName);
+    bool whetherInFeatures(std::string sName);
 private:
     std::string title;
     std::string url;
