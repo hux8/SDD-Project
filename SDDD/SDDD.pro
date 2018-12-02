@@ -60,3 +60,5 @@ FORMS += \
     changecode.ui \
     addpitch.ui \
     addproject.ui
+
+DISTFILES +=

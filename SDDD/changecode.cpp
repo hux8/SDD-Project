@@ -15,8 +15,11 @@ ChangeCode::~ChangeCode()
 }
 void ChangeCode::accept()
 {
+    //check if the code is new
     if(ui->first->text()==ui->second->text())
         emit changeCode(ui->first->text());
+
+    //update the code
     else
     {
         ui->error->setVisible(true);

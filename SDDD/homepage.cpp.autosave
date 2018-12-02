@@ -103,7 +103,6 @@ void HomePage::openPitch()
     connect(p,SIGNAL(modify(int,int,QString)),this,SLOT(modifyPitch(int,int,QString)));
     connect(p,SIGNAL(deletePitch(int)),this,SLOT(deletePitch(int)));
     p->show();
-
 }
 
 void HomePage::openProject()
@@ -394,6 +393,7 @@ void HomePage::writeData()
     for(int i=0;i<pitches.size();i++)
     {
         QString d=pitches[i].get_content();
+        //replace newline symbol with a place holder
         d.replace("\n","newline placement that no one would actually write z4");
         out<<"title: "<<pitches[i].get_title()<<"\n";
         out<<"date: "<<pitches[i].get_date()<<"\n";
@@ -467,7 +467,7 @@ void HomePage::readData()
         {
             de=line.right(line.size()-13);
             qDebug()<<de;
-           // line = stream.readLine();
+            //replace the newline place holder with "\n"
             de.replace("newline placement that no one would actually write z4","\n");
             Pitch p(date.toInt(),t,de);
             pitches.append(p);
@@ -503,6 +503,7 @@ void HomePage::readData()
         qDebug()<<line;
         if(line.left(7)=="title: ")
         {
+            //if this is not the first project read, save the current Project
             if(fe)
             {
                 Project p(t.toStdString(),url.toStdString(),de.toStdString(),
@@ -556,6 +557,7 @@ void HomePage::readData()
 
         line = stream2.readLine();
     }
+    //save the last project
     if(fe)
     {
         Project p(t.toStdString(),url.toStdString(),de.toStdString(),

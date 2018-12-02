@@ -12,8 +12,19 @@ class Verification : public QDialog
     Q_OBJECT
 
 signals:
+    /**
+     * @brief isChecked is emitted when the user passes
+     */
     void isChecked();
+
+    /**
+     * @brief asStudent is emitted when the user choses to continue as student/visitor
+     */
     void asStudent();
+
+    /**
+     * @brief isClosed is emitted when the window is closed
+     */
     void isClosed();
 public:
     explicit Verification(QWidget *parent = 0);
@@ -21,7 +32,15 @@ public:
 
 
 public slots:
+
+    /**
+     * @brief checkCode checks the code entered by the user
+     */
     void checkCode();
+
+    /**
+     * @brief showMain opens the homepage
+     */
     void showMain();
 
 

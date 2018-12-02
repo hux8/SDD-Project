@@ -16,9 +16,19 @@ public:
     ~AddPitch();
 
 signals:
+
+    /**
+     * @brief newPitch emits the attributes of the new Pitch
+     * @param date is the date of the created Pitch
+     * @param t is the title of the created Pitch
+     * @param d is the description of the created Pitch
+     */
     void newPitch(int date, QString t, QString d);
 
 public slots:
+    /**
+     * @brief createPitch createsa new Pitch
+     */
     void createPitch();
 
 private:

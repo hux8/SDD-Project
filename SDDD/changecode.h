@@ -16,9 +16,16 @@ public:
     ~ChangeCode();
 
 public slots:
+    /**
+     * @brief accept accepts the new code
+     */
     void accept();
 
 signals:
+    /**
+     * @brief changeCode emits the new code
+     * @param s is the new code
+     */
     void changeCode(QString s);
 
 private:

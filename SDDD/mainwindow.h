@@ -18,9 +18,25 @@ public:
     ~MainWindow();
 
 public slots:
+
+    /**
+     * @brief verify opens the verification page
+     */
     void verify();
+
+    /**
+     * @brief enterMain opens the homepage
+     */
     void enterMain();
+
+    /**
+     * @brief setInstructor sets the access
+     */
     void setInstructor();
+
+    /**
+     * @brief quit closes the program
+     */
     void quit();
 
 private:

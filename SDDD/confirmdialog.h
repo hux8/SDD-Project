@@ -16,9 +16,16 @@ public:
     ~ConfirmDialog();
 
 private slots:
+    /**
+     * @brief confirm confirms the change and emits confirmed
+     */
     void confirm();
 
 signals:
+
+    /**
+     * @brief confirmed is signals that the user confirmed the change
+     */
     void confirmed();
 
 private:
