@@ -30,4 +30,5 @@ private:
     std::string comment;
     std::string addDate;
     std::vector<std::string> features;
+    /* test */
 };
